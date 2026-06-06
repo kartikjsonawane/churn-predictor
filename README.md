@@ -85,7 +85,7 @@ churn-predictor/
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/YOUR_USERNAME/churn-predictor.git
+git clone https://github.com/kartikjsonawane/churn-predictor.git
 cd churn-predictor
 
 # Backend
@@ -224,7 +224,7 @@ railway up
 ### AWS EC2
 ```bash
 # SSH into your instance then:
-git clone https://github.com/YOUR_USERNAME/churn-predictor.git
+git clone https://github.com/kartikjsonawane/churn-predictor.git
 cd churn-predictor
 docker compose up -d
 ```
@@ -268,4 +268,4 @@ Create a `.env` file in the root to override.
 
 ## 📄 License
 
-MIT © 2024 – Built as an internship portfolio project.
+MIT © 2024 – Built by Kartik Sonawane as an internship portfolio project.
