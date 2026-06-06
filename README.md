@@ -1,5 +1,5 @@
 # 📊 ChurnGuard – Customer Churn Prediction System
-
+> 🚀 **Live API:** https://churn-predictor-7xon.onrender.com/docs
 > A production-style ML system that predicts customer churn probability using XGBoost & Logistic Regression, with a React dashboard and FastAPI backend.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
