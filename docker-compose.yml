@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  # ── Backend (FastAPI) ───────────────────────────────────────────────────────
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: churn_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models       # persist trained model
+      - ./data:/app/data           # persist data
+      - ./reports:/app/reports     # persist EDA plots
+    environment:
+      - PORT=8000
+      - ALLOWED_ORIGINS=http://localhost:3000,http://localhost:5173
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── Frontend (React + Vite) ─────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: churn_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    restart: unless-stopped
