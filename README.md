@@ -1,5 +1,6 @@
 # 📊 ChurnGuard – Customer Churn Prediction System
 > 🚀 **Live API:** https://churn-predictor-7xon.onrender.com/docs
+> 🌐 **Live App:** https://churn-predictor-rmit.vercel.app
 > A production-style ML system that predicts customer churn probability using XGBoost & Logistic Regression, with a React dashboard and FastAPI backend.
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
@@ -212,7 +213,7 @@ pytest backend/tests/ -v
 3. Set:
    - **Build command:** `pip install -r requirements.txt && python backend/ml/train.py`
    - **Start command:** `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. Add env variable: `ALLOWED_ORIGINS=https://your-frontend.vercel.app`
+4. Add env variable: `ALLOWED_ORIGINS=https://churn-predictor-rmit.vercel.app`
 
 ### Railway
 ```bash
